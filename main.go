@@ -4,13 +4,14 @@ import (
 	"log"
 	"net/http"
 
-	_ "github.com/sonichigo/hg/routes"
+	routes "github.com/sonichigo/hg/routes"
 
 	cu "github.com/sonichigo/hg/common"
 )
 
 func main() {
 	// Get port from environment variable or use default
+	routes.SetupRoutes()
 	port := cu.GetPort()
 
 	log.Printf("Server starting on port %s", port)

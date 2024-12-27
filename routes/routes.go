@@ -6,7 +6,7 @@ import (
 	handler "github.com/sonichigo/hg/handlers"
 )
 
-func init() {
+func SetupRoutes() {
 	http.Handle("/images/", http.StripPrefix("/images", http.FileServer(http.Dir("./images"))))
 
 	// Serve static files
