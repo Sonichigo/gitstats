@@ -7,6 +7,7 @@ func ServerIndex(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "./web/index.html")
 		return
 	}
+	http.NotFound(w, r)
 }
 func ServerOrgPage(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path == "/orgs" {
